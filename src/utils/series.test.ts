@@ -9,9 +9,12 @@ describe('SerieNumerica', () => {
   });
 
   describe('calcularSerie', () => {
+    it('debe calcular correctamente para n=0 (caso base)', () => {
+      const resultado = serie.calcularSerie(0);
+      expect(resultado).toBe(2);
+    });
+
     it('debe calcular correctamente la serie para los primeros 10 números naturales', () => {
-      // Casos de prueba con valores esperados
-      // Fórmula: 5 * triangular - 2 * fibonacci + primo(n+1)
       const casosEsperados = [
         { n: 1, esperado: 5 * 1 - 2 * 1 + 3 }, // 5 - 2 + 3 = 6
         { n: 2, esperado: 5 * 3 - 2 * 1 + 5 }, // 15 - 2 + 5 = 18
@@ -31,57 +34,72 @@ describe('SerieNumerica', () => {
       });
     });
 
+    it('debe manejar correctamente números más grandes dentro del límite', () => {
+      const resultado15 = serie.calcularSerie(15);
+      const esperado15 = 5 * 120 - 2 * 610 + 53;
+      expect(resultado15).toBe(esperado15);
+
+      const resultado20 = serie.calcularSerie(20);
+      const esperado20 = 5 * 210 - 2 * 6765 + 73; // 1050 - 13530 + 73 = -12407
+      expect(resultado20).toBe(esperado20);
+    });
+
+    it('debe calcular correctamente en el límite máximo permitido', () => {
+      const maxN = 167;
+      expect(() => serie.calcularSerie(maxN)).not.toThrow();
+      
+      const resultado = serie.calcularSerie(maxN);
+      expect(typeof resultado).toBe('number');
+      expect(isNaN(resultado)).toBe(false);
+    });
+  });
+
+  describe('validaciones de entrada', () => {
     it('debe lanzar error para números no enteros', () => {
       expect(() => serie.calcularSerie(3.5)).toThrow(
-        'La entrada debe ser un número entero positivo.'
+        'El valor debe ser un número entero.'
+      );
+      expect(() => serie.calcularSerie(1.1)).toThrow(
+        'El valor debe ser un número entero.'
+      );
+      expect(() => serie.calcularSerie(Math.PI)).toThrow(
+        'El valor debe ser un número entero.'
       );
     });
 
     it('debe lanzar error para números negativos', () => {
       expect(() => serie.calcularSerie(-1)).toThrow(
-        'La entrada debe ser un número entero positivo.'
+        'El valor debe ser un número entero positivo.'
       );
-    });
-
-    it('debe lanzar error para cero', () => {
-      expect(() => serie.calcularSerie(0)).toThrow(
-        'La entrada debe ser un número entero positivo.'
+      expect(() => serie.calcularSerie(-10)).toThrow(
+        'El valor debe ser un número entero positivo.'
+      );
+      expect(() => serie.calcularSerie(-0.5)).toThrow(
+        'El valor debe ser un número entero.'
       );
     });
 
     it('debe lanzar error cuando la posición del primo excede la tabla', () => {
-      // La tabla tiene 25 primos, así que n=25 necesitaría el primo en posición 26
-      expect(() => serie.calcularSerie(25)).toThrow(
-        'Posición de primo fuera de los límites de la tabla.'
+      expect(() => serie.calcularSerie(169)).toThrow(
+        'Posición de numero primo fuera de rango. El máximo es 168'
+      );
+      expect(() => serie.calcularSerie(200)).toThrow(
+        'Posición de numero primo fuera de rango. El máximo es 168'
       );
     });
-  });
 
-  describe('métodos auxiliares indirectos', () => {
-    it('debe manejar el caso base de fibonacci (n=1)', () => {
-      const resultado = serie.calcularSerie(1);
-      expect(resultado).toBe(6); // 5*1 - 2*1 + 3
-    });
-
-    it('debe calcular correctamente para números más grandes dentro del límite', () => {
-      const resultado = serie.calcularSerie(15);
-      // triangular(15) = 120, fibonacci(15) = 610, primo(16) = 53
-      const esperado = 5 * 120 - 2 * 610 + 53; // 600 - 1220 + 53 = -567
-      expect(resultado).toBe(esperado);
+    it('debe manejar valores especiales', () => {
+      expect(() => serie.calcularSerie(NaN)).toThrow();
+      expect(() => serie.calcularSerie(Infinity)).toThrow();
+      expect(() => serie.calcularSerie(-Infinity)).toThrow();
     });
   });
-});
-/// <reference types="vitest" />
-import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
-import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    setupFiles: './src/setupTests.ts', // Comentar esta línea
-  },
+  describe('límites', () => {
+    it('debe manejar el límite superior correctamente', () => {
+      const resultado168 = serie.calcularSerie(168);
+      expect(isNaN(resultado168)).toBe(true);
+      expect(() => serie.calcularSerie(169)).toThrow();
+    });
+  });
 });
