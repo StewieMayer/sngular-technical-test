@@ -1,10 +1,10 @@
 class SerieNumerica {
 
     // Método principal para calcular la serie
-    public calcularSerie(n: number): number {
+    public calcularSerie(n: number): number | string {
         // ⚠️ Validación de entrada
         if (!Number.isInteger(n) || n < 1) {
-            throw new Error("La entrada debe ser un número entero positivo.");
+            return "La entrada debe ser un número entero positivo.";
         }
 
         const triangular: number = this._calcularTriangular(n);
