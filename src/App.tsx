@@ -3,14 +3,17 @@ import Layout from "./components/layout/Layout";
 import SerieDescription from "./components/SerieDescription";
 import SerieForm from "./components/SerieForm";
 import SerieResult from "./components/SerieResult";
+import { SerieProvider } from "./context/SerieContext";
 
 const App: React.FC = () => {
   return (
     <Layout>
       <Card>
-        <SerieDescription />
-        <SerieForm />
-        <SerieResult />
+        <SerieProvider>
+          <SerieDescription />
+          <SerieForm />
+          <SerieResult />
+        </SerieProvider>
       </Card>
     </Layout>
   );
