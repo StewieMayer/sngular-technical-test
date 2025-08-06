@@ -55,6 +55,8 @@ src/
 ├── components/        # Componentes React
 │   ├── SerieForm.tsx     # Formulario de entrada
 │   ├── SerieResult.tsx   # Mostrar resultados
+│   ├── SerieModal.tsx    # Modal con explicación de fórmulas
+│   ├── SerieFormModal.tsx # Modal con reglas de entrada
 │   └── useCard.ts        # Hook personalizado
 ├── context/          # Context API
 │   └── SerieContext.tsx  # Estado global
@@ -145,3 +147,19 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 ---
 
 ⭐ ¡Dale una estrella si te gustó el proyecto!
+
+## 📱 Componentes Interactivos
+
+### 🧮 SerieModal
+Modal informativo que explica:
+- Fórmula matemática completa
+- Descripción detallada de cada secuencia numérica
+- Ejemplos visuales de cálculo
+- Casos de uso y límites
+
+### ℹ️ SerieFormModal  
+Modal de ayuda para entrada de datos que incluye:
+- Valores permitidos y prohibidos
+- Ejemplos de entradas correctas e incorrectas
+- Explicación de limitaciones del sistema
+- Guía de uso para nuevos usuarios
