@@ -9,7 +9,7 @@ const SerieForm: React.FC = () => {
   const { calcSerie } = useContext(SerieContext);
 
   return (
-    <div className="mb-6 border border-2 border-gray-200 p-4 pt-3 rounded-lg shadow-xl">
+    <div className="mb-6 border-2 border-gray-200 p-4 pt-3 rounded-lg shadow-xl">
       <div className="flex items-center justify-between mb-2">
         <label
           className="block text-gray-700 text-sm font-bold"
