@@ -11,6 +11,7 @@ Una aplicación React moderna para calcular series numéricas personalizadas bas
 ## 🚀 Características Principales
 
 ### 🎯 **Core Features**
+
 - ⚡ **React 19** con TypeScript y JSX moderno
 - 🎨 **TailwindCSS 4.1** con gradiente radial azul personalizado
 - 🔥 **Vite 7** como build tool y dev server
@@ -18,6 +19,7 @@ Una aplicación React moderna para calcular series numéricas personalizadas bas
 - 📱 **Diseño responsive** adaptado a mobile y desktop
 
 ### 🎭 **Experiencia de Usuario**
+
 - 💡 **Sistema de tooltips** con 4 posiciones (top, bottom, left, right)
 - 🎪 **Modales informativos** con explicaciones detalladas
 - ✨ **Animaciones suaves** en hover y transiciones
@@ -25,6 +27,7 @@ Una aplicación React moderna para calcular series numéricas personalizadas bas
 - 🔤 **Validación en tiempo real** con mensajes de error claros
 
 ### 🏗️ **Arquitectura Avanzada**
+
 - 🎯 **Context API** para gestión de estado global
 - 🪝 **Custom Hooks** reutilizables (`useModal`, `useTooltip`)
 - 📁 **Estructura modular** por features/componentes
@@ -113,54 +116,62 @@ sngular-technical-test/
 
 ## 🧮 Detalles de la Fórmula
 
-### 🔺 **Números Triangulares** 
+### 🔺 **Números Triangulares**
+
 ```typescript
 T(n) = n × (n + 1) / 2
 ```
+
 Representan puntos organizados en forma triangular.
 **Secuencia**: 0, 1, 3, 6, 10, 15, 21, 28, 36, 45...
 
 ### 🌀 **Secuencia de Fibonacci**
+
 ```typescript
 F(0) = 0, F(1) = 1
 F(n) = F(n-1) + F(n-2) para n ≥ 2
 ```
+
 Cada número es la suma de los dos anteriores.
 **Secuencia**: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...
 
 ### 🔢 **Números Primos**
+
 Una tabla pre-calculada de los primeros **168 números primos**.
 **Rango**: 2, 3, 5, 7, 11, 13... hasta 997
 **Índices válidos**: 0-167 (168 elementos en total)
 
 ## 📊 Ejemplos Detallados de Cálculo
 
-| n | T(n) | F(n) | P(n) | 5×T(n) | 2×F(n) | Fórmula | Resultado |
-|---|------|------|------|---------|--------|---------|-----------|
-| 0 | 0    | 0    | 2    | 0       | 0      | 0-0+2   | **2**     |
-| 1 | 1    | 1    | 3    | 5       | 2      | 5-2+3   | **6**     |
-| 2 | 3    | 1    | 5    | 15      | 2      | 15-2+5  | **18**    |
-| 3 | 6    | 2    | 7    | 30      | 4      | 30-4+7  | **33**    |
-| 5 | 15   | 5    | 13   | 75      | 10     | 75-10+13| **78**    |
-| 10| 55   | 55   | 31   | 275     | 110    | 275-110+31| **196** |
+| n   | T(n) | F(n) | P(n) | 5×T(n) | 2×F(n) | Fórmula    | Resultado |
+| --- | ---- | ---- | ---- | ------ | ------ | ---------- | --------- |
+| 0   | 0    | 0    | 2    | 0      | 0      | 0-0+2      | **2**     |
+| 1   | 1    | 1    | 3    | 5      | 2      | 5-2+3      | **6**     |
+| 2   | 3    | 1    | 5    | 15     | 2      | 15-2+5     | **18**    |
+| 3   | 6    | 2    | 7    | 30     | 4      | 30-4+7     | **33**    |
+| 5   | 15   | 5    | 13   | 75     | 10     | 75-10+13   | **78**    |
+| 10  | 55   | 55   | 31   | 275    | 110    | 275-110+31 | **196**   |
 
 ## 🧪 Suite de Testing
 
 **13 tests unitarios** que cubren todos los aspectos críticos:
 
 ### ✅ **Tests de Funcionalidad**
+
 - Cálculos correctos para casos base (n=0, n=1)
 - Verificación de los primeros 10 números naturales
 - Casos límite dentro del rango válido
 - Consistencia en cálculos repetidos
 
 ### 🚫 **Tests de Validación**
+
 - Rechazo de números decimales (3.5, π)
 - Manejo de números negativos
 - Detección de valores no numéricos (NaN, Infinity)
 - Límites de la tabla de primos
 
 ### ⚡ **Tests de Performance**
+
 - Ejecución rápida para múltiples cálculos
 - Comportamiento en límites superiores
 - Manejo de edge cases
@@ -174,6 +185,7 @@ npm run test
 ## 💡 Sistema de Tooltips
 
 ### 🎯 **Implementación**
+
 - **Componente universal**: `<Tooltip>` reutilizable
 - **4 posiciones**: top, bottom, left, right
 - **Activación**: hover con transición suave (200ms)
@@ -181,63 +193,55 @@ npm run test
 - **Responsive**: se adapta al contenido
 
 ### 📍 **Ubicaciones Actuales**
-| Elemento | Tooltip | Posición |
-|----------|---------|----------|
-| Botón ℹ️ (SerieDescription) | "Más información sobre la serie" | Izquierda |
-| Botón ℹ️ (SerieForm) | "Ayuda sobre el formato de entrada" | Derecha |
-| Enlace GitHub | "Visita mi perfil de GitHub" | Arriba |
-| Enlace LinkedIn | "Conecta conmigo en LinkedIn" | Arriba |
+
+| Elemento                    | Tooltip                             | Posición  |
+| --------------------------- | ----------------------------------- | --------- |
+| Botón ℹ️ (SerieDescription) | "Más información sobre la serie"    | Izquierda |
+| Botón ℹ️ (SerieForm)        | "Ayuda sobre el formato de entrada" | Derecha   |
+| Enlace GitHub               | "Visita mi perfil de GitHub"        | Arriba    |
+| Enlace LinkedIn             | "Conecta conmigo en LinkedIn"       | Arriba    |
 
 ## 🎪 Modales Informativos
 
 ### 🧮 **SerieModal**
+
 - **Propósito**: Explicación matemática completa
 - **Contenido**: Fórmulas, ejemplos visuales, casos de uso
 - **Diseño**: Grid responsivo con códigos de colores por secuencia
 - **Interactividad**: Ejemplo de cálculo paso a paso
 
 ### ℹ️ **SerieFormModal**
+
 - **Propósito**: Guía de entrada de datos
 - **Contenido**: Valores permitidos/prohibidos, ejemplos, limitaciones
 - **Diseño**: Código de colores (verde=válido, rojo=inválido)
 - **Utilidad**: Prevención de errores de entrada
 
-## 🚫 Limitaciones Conocidas
-
-### 📏 **Limitaciones Técnicas**
-- **Rango máximo**: n ≤ 167 (debido a tabla de primos de 168 elementos)
-- **Tipos de entrada**: Solo números enteros positivos (≥ 0)
-- **Bug identificado**: `_getPrimoAt` usa `>` en lugar de `>=` para validación de límites
-
-### 🎨 **Limitaciones de UX**
-- **Tooltips móviles**: Funcionalidad básica en dispositivos táctiles
-- **Modal responsivo**: Scroll en pantallas muy pequeñas
-- **Accesibilidad**: Navegación por teclado limitada en tooltips
-
-### 📱 **Limitaciones de Diseño**
-- **Tema único**: No hay modo oscuro/claro
-- **Idioma**: Solo español
-- **Persistencia**: No hay almacenamiento de historial
+---
 
 ## ⚙️ Stack Tecnológico
 
 ### 🎯 **Frontend Core**
+
 - **React 19.1.0**: Biblioteca UI con últimas características
 - **TypeScript 5.8.3**: Tipado estático robusto
 - **Vite 7.0.4**: Build tool moderno y rápido
 
 ### 🎨 **Styling & UI**
+
 - **TailwindCSS 4.1.11**: Framework CSS utility-first
 - **Gradientes personalizados**: `bg-radial from-blue-100 to-blue-500`
 - **Responsive design**: Mobile-first approach
 
 ### 🧪 **Testing & Quality**
+
 - **Vitest 3.2.4**: Test runner compatible con Vite
 - **Happy-DOM 18.0.1**: DOM simulation liviano
 - **@testing-library/react 16.3.0**: Testing utilities
 - **ESLint 9.30.1**: Linting y code quality
 
 ### 🔧 **Development Tools**
+
 - **TypeScript**: Configuración strict con project references
 - **Hot Module Replacement**: Desarrollo fluido con cambios instantáneos
 - **Source Maps**: Debug optimizado en desarrollo
@@ -245,77 +249,37 @@ npm run test
 ## 📈 Métricas del Proyecto
 
 ### 📊 **Estadísticas de Código**
+
 - **Archivos TypeScript**: 15 archivos .tsx/.ts
 - **Componentes React**: 8 componentes funcionales
 - **Custom Hooks**: 2 hooks reutilizables
 - **Líneas de código**: ~1,200 líneas (aprox.)
 
 ### 🎯 **Coverage de Tests**
+
 ```bash
 npm run coverage
 ```
+
 - **Archivos testeados**: utils/series.ts
 - **Funciones cubiertas**: 100% de la lógica matemática
 - **Casos edge**: Validaciones completas
 
 ### ⚡ **Performance**
+
 - **Build size**: ~204KB (minificado)
 - **Tiempo de build**: <2 segundos
 - **Tests duration**: <25ms para 13 tests
 - **Dev server startup**: <800ms
 
-## 🔮 Roadmap y Mejoras Futuras
-
-### 🚀 **Próximas Versiones**
-- [ ] **v1.1**: Soporte para números decimales
-- [ ] **v1.2**: Ampliación de tabla de primos hasta 1000
-- [ ] **v1.3**: Tema oscuro/claro
-- [ ] **v1.4**: Historial de cálculos con LocalStorage
-- [ ] **v1.5**: Exportación de resultados (JSON/CSV)
-
-### 🎨 **Mejoras de UX**
-- [ ] Gráficas interactivas de las secuencias
-- [ ] Animaciones de cálculo paso a paso
-- [ ] Tutorial interactivo para nuevos usuarios
-- [ ] Shortcuts de teclado
-- [ ] PWA con funcionamiento offline
-
-### 🔧 **Mejoras Técnicas**
-- [ ] Service Worker para caching
-- [ ] Lazy loading de componentes
-- [ ] Bundle splitting optimizado
-- [ ] Tests de integración con Playwright
-- [ ] CI/CD con GitHub Actions
-
-## 🤝 Contribuciones
-
-### 📝 **Cómo Contribuir**
-1. **Fork** el proyecto en GitHub
-2. **Crea** una rama feature: `git checkout -b feature/AmazingFeature`
-3. **Commit** tus cambios: `git commit -m 'Add AmazingFeature'`
-4. **Push** a la rama: `git push origin feature/AmazingFeature`
-5. **Abre** un Pull Request
-
-### 🎯 **Areas de Contribución**
-- 🐛 **Bug fixes**: Corrección del límite en `_getPrimoAt`
-- ✨ **Features**: Nuevas funcionalidades matemáticas
-- 📚 **Documentación**: Mejoras en README y comentarios
-- 🧪 **Testing**: Más casos de prueba y coverage
-- 🎨 **UI/UX**: Mejoras visuales y de usabilidad
-
-### 📏 **Guías de Estilo**
-- **TypeScript**: Strict mode habilitado
-- **React**: Functional components con hooks
-- **CSS**: TailwindCSS classes, evitar estilos inline
-- **Tests**: Descriptivos y con casos edge
-- **Commits**: Conventional commits format
+---
 
 ## 👨‍💻 Autor
 
 **Antonio Amaya**  
 🌐 [GitHub](https://github.com/stewiemayer)  
 💼 [LinkedIn](https://linkedin.com/in/antonioamayastc)  
-📧 Contacto: antonio.amaya.stc@gmail.com
+📧 Contacto: stewiemayer@hotmail.com
 
 ---
 
@@ -340,7 +304,7 @@ Este proyecto está bajo la **Licencia MIT**. Ver el archivo [LICENSE](LICENSE) 
 ### ⭐ ¡Dale una estrella si te gustó el proyecto! ⭐
 
 **Serie Numérica Calculator v1.0.0**  
-*Una aplicación React moderna para cálculos matemáticos avanzados*
+_Una aplicación React moderna para cálculos matemáticos avanzados_
 
 ![Made with TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Made with React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
