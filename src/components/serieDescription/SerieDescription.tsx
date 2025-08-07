@@ -7,8 +7,8 @@ const SerieDescription: React.FC = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl flex-1 font-bold text-center text-gray-800">
+      <div className="flex justify-center items-center mb-6">
+        <h2 className="text-3xl font-bold text-center text-gray-800">
           Calcular Serie
         </h2>
         <Tooltip text="Más información sobre la serie" position="left">
