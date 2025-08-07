@@ -2,6 +2,10 @@
 
 Una aplicación React moderna para calcular series numéricas personalizadas basada en una fórmula matemática que combina números triangulares, secuencia de Fibonacci y números primos.
 
+## 🌐 Demo en Vivo
+
+🔗 **[Ver aplicación desplegada](https://stewiemayer.github.io/sngular-technical-test/)**
+
 ## 📊 Fórmula Matemática
 
 **`serie(n) = 5 × triangular(n) - 2 × fibonacci(n) + primo(posición n)`**
