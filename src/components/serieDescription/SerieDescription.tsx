@@ -13,7 +13,7 @@ const SerieDescription: React.FC = () => {
         </h2>
         <Tooltip text="Más información sobre la serie" position="left">
           <button
-            className="rounded-md p-1 text-blue-500 hover:text-blue-600 transition-colors cursor-pointer hover:shadow-md"
+            className="rounded-md space-x-1 p-1 text-blue-500 hover:text-blue-600 transition-colors cursor-pointer"
             onClick={handleShow}
           >
             ℹ️
